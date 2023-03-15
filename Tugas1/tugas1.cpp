@@ -1,19 +1,19 @@
 #include <iostream>
 using namespace std;
 
-int penjumlahan(int a, int b)
+int tambah(int a, int b)
 {
     int hasil = a + b;
     return hasil;
 }
 
-int pengurangan(int a, int b)
+int kurang(int a, int b)
 {
     int hasil = a - b;
     return hasil;
 }
 
-int hitungTotal(int arr[], int n)
+int totalArr(int arr[], int n)
 {
     int total = 0;
     for (int i = 0; i < n; i++)
@@ -23,9 +23,9 @@ int hitungTotal(int arr[], int n)
     return total;
 }
 
-float hitungRataRata(int arr[], int n)
+float avg(int arr[], int n)
 {
-    int total = hitungTotal(arr, n);
+    int total = totalArr(arr, n);
     float rata = (float)total / n;
     return rata;
 }
@@ -61,14 +61,14 @@ int main()
             cin >> a;
             cout << "Nilai b : ";
             cin >> b;
-            cout << "Hasil penjumlahan: " << penjumlahan(a, b) << endl;
+            cout << "Hasil penjumlahan: " << tambah(a, b) << endl << endl;
             break;
         case 2:
             cout << "Nilai a: ";
             cin >> a;
             cout << "Nilai b: ";
             cin >> b;
-            cout << "Hasil pengurangan: " << pengurangan(a, b) << endl;
+            cout << "Hasil pengurangan: " << kurang(a, b) << endl << endl;
             break;
         case 3:
             cout << "Masukkan panjang array: ";
@@ -78,7 +78,7 @@ int main()
                 cout << "Masukkan nilai array ke-" << i << ": ";
                 cin >> arr[i];
             }
-            cout << "Total dari array: " << hitungTotal(arr, n) << endl;
+            cout << "Total dari array: " << totalArr(arr, n) << endl << endl;
             break;
         case 4:
             cout << "Masukkan panjang array: ";
@@ -88,8 +88,8 @@ int main()
                 cout << "Masukkan nilai array ke-" << i << ": ";
                 cin >> arr[i];
             }
-            rata = hitungRataRata(arr, n);
-            cout << "Rata-rata dari array: " << rata << endl;
+            rata = avg(arr, n);
+            cout << "Rata-rata dari array: " << rata << endl << endl;
             break;
         case 5:
             loop = false;
