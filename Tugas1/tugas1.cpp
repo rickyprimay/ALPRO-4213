@@ -50,7 +50,7 @@ int main()
     cout << "Masukkan panjang array: ";
     cin >> n;
     int arr[n];
-    for (int i = 1; i < n; i++)
+    for (int i = 0; i < n; i++)
     {
         cout << "Masukkan nilai array ke-" << i << ": ";
         cin >> arr[i];
