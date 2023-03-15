@@ -32,36 +32,72 @@ float hitungRataRata(int arr[], int n)
 
 int main()
 {
+    cout << "|---------- Ricky Primayuda Putra ----------|\n";
+    cout << "|----------    A11.2022.14486     ----------|\n";
+    cout << "|----------       A11.4213        ----------|\n";
+    cout << "\n";
 
-    cout << "/========== Ricky Primayuda Putra ==========/\n";
-    cout << "/==========    A11.2022.14486     ==========/\n";
-    cout << "/==========       A11.4213        ==========/\n";
+    int pilihan, a, b, n;
+    int arr[100];
+    float rata;
+    bool loop = true;
 
-    int a, b;
-    cout << "Masukan bilangan pertama : ";
-    cin >> a;
-    cout << "Masukan bilangan kedua: ";
-    cin >> b;
-
-    int hasil_penjumlahan = penjumlahan(a, b);
-    int hasil_pengurangan = pengurangan(a, b);
-
-    int n;
-    cout << "Masukkan panjang array: ";
-    cin >> n;
-    int arr[n];
-    for (int i = 0; i < n; i++)
+    while (loop)
     {
-        cout << "Masukkan nilai array ke-" << i << ": ";
-        cin >> arr[i];
-    }
-    int total = hitungTotal(arr, n);
-    float rata = hitungRataRata(arr, n);
+        cout << "|----------    Pilihan Operasi :  ----------|\n";
+        cout << "|----------     1. Penjumlahan    ----------|\n";
+        cout << "|----------     2. Pengurangan    ----------|\n";
+        cout << "|----------     3. Total Array    ----------|\n";
+        cout << "|----------   4. Rata-rata Array  ----------|\n";
+        cout << "|----------       5. Keluar       ----------|\n";
+        cout << "\n";
+        cout << "Masukkan Pilihan Anda : ";
+        cin >> pilihan;
 
-    cout << "Hasil penjumlahan: " << hasil_penjumlahan << endl;
-    cout << "Hasil pengurangan: " << hasil_pengurangan << endl;
-    cout << "Total dari array: " << total << endl;
-    cout << "Rata-rata dari array: " << rata << endl;
+        switch (pilihan)
+        {
+        case 1:
+            cout << "Nilai a : ";
+            cin >> a;
+            cout << "Nilai b : ";
+            cin >> b;
+            cout << "Hasil penjumlahan: " << penjumlahan(a, b) << endl;
+            break;
+        case 2:
+            cout << "Nilai a: ";
+            cin >> a;
+            cout << "Nilai b: ";
+            cin >> b;
+            cout << "Hasil pengurangan: " << pengurangan(a, b) << endl;
+            break;
+        case 3:
+            cout << "Masukkan panjang array: ";
+            cin >> n;
+            for (int i = 0; i < n; i++)
+            {
+                cout << "Masukkan nilai array ke-" << i << ": ";
+                cin >> arr[i];
+            }
+            cout << "Total dari array: " << hitungTotal(arr, n) << endl;
+            break;
+        case 4:
+            cout << "Masukkan panjang array: ";
+            cin >> n;
+            for (int i = 0; i < n; i++)
+            {
+                cout << "Masukkan nilai array ke-" << i << ": ";
+                cin >> arr[i];
+            }
+            rata = hitungRataRata(arr, n);
+            cout << "Rata-rata dari array: " << rata << endl;
+            break;
+        case 5:
+            loop = false;
+            break;
+        default:
+            cout << "Pilihan tidak tersedia." << endl;
+        }
+    }
 
     return 0;
 }
