@@ -8,7 +8,6 @@ void bubbleSort(int arr[], int n)
         {
             if (arr[j] < arr[j + 1])
             {
-                // Tukar elemen jika elemen sebelumnya lebih kecil
                 int temp = arr[j];
                 arr[j] = arr[j + 1];
                 arr[j + 1] = temp;
